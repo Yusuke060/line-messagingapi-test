@@ -135,29 +135,29 @@ if ($text == 'はい') {
     ]
   ];
 } else if ($text == 'おはよう') {
-    $message = array(
+    $response_format_text = array(
         'type' => 'text',
         'text' => '【'.$text.'】とは何ですか？'
     );
 } else if ($text == '昼ごはん') {
-    $message = array(
+    $response_format_text = array(
         'type' => 'text',
         'text' => '【'.$text.'】とは何ですか？'
     );
 } else if ($text == 'スタンプ') {
-    $message = array(
+    $response_format_text = array(
         'type'      => 'sticker',
         'packageId' => 1,
         'stickerId' => 1
     );
 } else if ($text == '写真') {
-    $message = array(
+    $response_format_text = array(
         'type'      => 'image',
         'packageId' => '/img2-3.jpg',
         'stickerId' => '/img2-3.jpg'
     );
 } else if ($text == 'sticker') {
-    $message = array(
+    $response_format_text = array(
         'type'      => 'sticker',
         'packageId' => 1,
         'stickerId' => 1

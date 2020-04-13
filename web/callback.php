@@ -6,14 +6,19 @@ $accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
 
-$type = $jsonObj->{"events"}[0]->{"message"}->{"type"};
+// イベント種別（今回は2種類のみ）
+// message（メッセージが送信されると発生）
+// postback（ポストバックオプションに返事されると送信）
+$type = $json_obj->{"events"}[0]->{"type"};
+
+$obj = $jsonObj->{"events"}[0]->{"message"}->{"type"};
 //メッセージ取得
 $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 //ReplyToken取得
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
 //メッセージ以外のときは何も返さず終了
-if($type != "text"){
+if($obj != "text"){
 	exit;
 }
 
@@ -129,6 +134,16 @@ if ($text == 'はい') {
       ]
     ]
   ];
+} else if ($text == 'おはよう') {
+    $message = array(
+        'type' => 'text',
+        'text' => '【'.$text.'】とは何ですか？'
+    );
+} else if ($text == '昼ごはん') {
+    $message = array(
+        'type' => 'text',
+        'text' => '【'.$text.'】とは何ですか？'
+    );
 } else {
   $response_format_text = [
     "type" => "template",

@@ -144,6 +144,24 @@ if ($text == 'はい') {
         'type' => 'text',
         'text' => '【'.$text.'】とは何ですか？'
     );
+} else if ($text == 'スタンプ') {
+    $message = array(
+        'type'      => 'sticker',
+        'packageId' => 1,
+        'stickerId' => 1
+    );
+} else if ($text == '写真') {
+    $message = array(
+        'type'      => 'image',
+        'packageId' => '/img2-3.jpg',
+        'stickerId' => '/img2-3.jpg'
+    );
+} else if ($text == 'sticker') {
+    $message = array(
+        'type'      => 'sticker',
+        'packageId' => 1,
+        'stickerId' => 1
+    );
 } else {
   $response_format_text = [
     "type" => "template",

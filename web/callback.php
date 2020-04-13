@@ -136,8 +136,8 @@ if ($text == 'はい') {
   );
 } else if ($text == 'おはよう') {
   $response_format_text = array(
-    'type' => 'text',
-    'text' => '【'.$text.'】とは何ですか？'
+    "type" => "text",
+    "text" => "【'.$text.'】とは何ですか？"
   );
 } else if ($text == '昼ごはん') {
   $response_format_text = array(
@@ -146,9 +146,9 @@ if ($text == 'はい') {
   );
 } else if ($text == 'スタンプ') {
   $response_format_text = array(
-    'type'      => 'sticker',
-    'packageId' => 1,
-    'stickerId' => 1
+    "type"      => "sticker",
+    "packageId" => 1,
+    "stickerId" => 1
   );
 } else if ($text == '写真') {
   $response_format_text = array(

@@ -135,33 +135,33 @@ if ($text == 'はい') {
     )
   );
 } else if ($text == 'おはよう') {
-    $response_format_text = array(
-        'type' => 'text',
-        'text' => '【'.$text.'】とは何ですか？'
-    );
+  $response_format_text = array(
+    'type' => 'text',
+    'text' => '【'.$text.'】とは何ですか？'
+  );
 } else if ($text == '昼ごはん') {
-    $response_format_text = array(
-        'type' => 'text',
-        'text' => '【'.$text.'】とは何ですか？'
-    );
+  $response_format_text = array(
+    'type' => 'text',
+    'text' => '【'.$text.'】とは何ですか？'
+  );
 } else if ($text == 'スタンプ') {
-    $response_format_text = array(
-        'type'      => 'sticker',
-        'packageId' => 1,
-        'stickerId' => 1
-    );
+  $response_format_text = array(
+    'type'      => 'sticker',
+    'packageId' => 1,
+    'stickerId' => 1
+  );
 } else if ($text == '写真') {
-    $response_format_text = array(
-        'type'      => 'image',
-        'packageId' => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
-        'stickerId' => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg"
-    );
+  $response_format_text = array(
+    'type'      => 'image',
+    'packageId' => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
+    'stickerId' => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg"
+  );
 } else if ($text == 'sticker') {
-    $response_format_text = array(
-        'type'      => 'sticker',
-        'packageId' => 1,
-        'stickerId' => 1
-    );
+  $response_format_text = array(
+    'type'      => 'sticker',
+    'packageId' => 1,
+    'stickerId' => 1
+  );
 } else {
   $response_format_text = array(
     "type" => "template",

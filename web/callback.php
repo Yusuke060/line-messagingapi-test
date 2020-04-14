@@ -162,6 +162,11 @@ if ($text == 'はい') {
     'packageId' => 1,
     'stickerId' => 1
   );
+} else if (ctype_digit($text)) {
+  $response_format_text = array(
+    'type' => 'text',
+    'text' => '【'.$text.'】ですね？'
+  );
 } else {
   $response_format_text = array(
     "type" => "template",

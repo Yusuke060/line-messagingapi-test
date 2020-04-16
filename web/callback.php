@@ -263,7 +263,7 @@ if ($text == 'はい') {
       'columns' => array(
         array(
           'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
-          'actions' => array(
+          'action' => array(
             array(
               'type' => 'message',
               'label' => 'ラベルです',
@@ -273,7 +273,7 @@ if ($text == 'はい') {
         ),
         array(
           'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
-          'actions' => array(
+          'action' => array(
             array(
               'type' => 'message',
               'label' => 'ラベルです',

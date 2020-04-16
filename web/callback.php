@@ -139,11 +139,6 @@ if ($text == 'はい') {
     'type' => 'text',
     'text' => '【'.$text.'】とは何ですか？'
   );
-} else if ($text == '昼ごはん') {
-  $response_format_text = array(
-    'type' => 'text',
-    'text' => '【'.$text.'】とは何ですか？'
-  );
 } else if ($text == 'スタンプ') {
   $response_format_text = array(
     'type'      => 'sticker',
@@ -153,16 +148,35 @@ if ($text == 'はい') {
 } else if ($text == '写真') {
   $response_format_text = array(
     'type'      => 'image',
-    'packageId' => 'https://' . $_SERVER['SERVER_NAME'] . '/img2-3.jpg',
-    'stickerId' => 'https://' . $_SERVER['SERVER_NAME'] . '/img2-3.jpg'
+    'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
+    'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img2-3.jpg'
   );
-} else if ($text == 'sticker') {
+} else if ($text == '動画') {
   $response_format_text = array(
-    'type'      => 'sticker',
-    'packageId' => 1,
-    'stickerId' => 1
+    'type'               => 'video',
+    'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.mp4',
+    'previewImageUrl'    => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg'
+  );
+} else if ($text == '音声') {
+  $response_format_text = array(
+    'type'               => 'audio',
+    'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/oimtsm.m4a',
+    'duration'    => 3000
+  );
+} else if ($text == '位置') {
+  $response_format_text = array(
+    'type'      => 'location',
+    'title'     => '皇居',
+    'address'   => '東京都千代田区千代田1番1号',
+    'latitude'  => 35.677730,
+    'longitude' => 139.754813
   );
 } else if ($text == '昼ごはん') {
+  $response_format_text = array(
+    'type' => 'text',
+    'text' => '何が食べたいですか？'
+  );
+} else if ($text == '昼') {
   $response_format_text = array(
     'type' => 'text',
     'text' => '【'.$text.'】とは何ですか？'

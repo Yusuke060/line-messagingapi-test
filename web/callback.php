@@ -266,8 +266,8 @@ if ($text == 'はい') {
           'action' => array(
             array(
               'type' => 'message',
-              'label' => 'ラベルです',
-              'text' => 'メッセージ'
+              'label' => 'ラベル1',
+              'text' => 'メッセージ1'
             )
           )
         ),
@@ -276,8 +276,8 @@ if ($text == 'はい') {
           'action' => array(
             array(
               'type' => 'message',
-              'label' => 'ラベルです',
-              'text' => 'メッセージ'
+              'label' => 'ラベル2',
+              'text' => 'メッセージ2'
             )
           )
         )

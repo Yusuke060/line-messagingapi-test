@@ -254,6 +254,36 @@ if ($text == 'はい') {
       )
     )
   );
+} else if ($text == '画像カルーセル') {
+  $response_format_text = array(
+    'type'     => 'template',
+    'altText'  => '画像カルーセルテスト',
+    'template' => array(
+      'type'    => 'image_carousel',
+      'columns' => array(
+        array(
+          'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+          'actions' => array(
+            array(
+              'type' => 'message',
+              'label' => 'ラベルです',
+              'text' => 'メッセージ'
+            )
+          )
+        ),
+        array(
+          'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+          'actions' => array(
+            array(
+              'type' => 'message',
+              'label' => 'ラベルです',
+              'text' => 'メッセージ'
+            )
+          )
+        )
+      )
+    )
+  );
 }
 
 

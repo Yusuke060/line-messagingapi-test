@@ -260,7 +260,7 @@ if ($text == 'はい') {
     'altText'  => '画像カルーセルテスト',
     'template' => array(
       'type'    => 'image_carousel',
-      'columns' => array(
+      'columns' => [
         array(
           'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
           'action' => array(
@@ -281,7 +281,7 @@ if ($text == 'はい') {
             )
           )
         )
-      ),
+      ]
     )
   );
 }

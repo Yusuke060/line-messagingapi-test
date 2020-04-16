@@ -254,7 +254,7 @@ if ($text == 'はい') {
       )
     )
   );
-} else if ($text == '画像カルーセル') {
+} else if ($text == 'あ') {
   $response_format_text = array(
     'type'     => 'template',
     'altText'  => '画像カルーセルテスト',
@@ -262,7 +262,7 @@ if ($text == 'はい') {
       'type'    => 'image_carousel',
       'columns' => array(
         array(
-          'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+          'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
           'action' => array(
             array(
               'type' => 'message',

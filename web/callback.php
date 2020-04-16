@@ -161,7 +161,7 @@ if ($text == 'はい') {
   $response_format_text = array(
     'type'               => 'audio',
     'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/oimtsm.m4a',
-    'duration'    => 3000
+    'duration'    => 2000
   );
 } else if ($text == '位置') {
   $response_format_text = array(
@@ -171,7 +171,98 @@ if ($text == 'はい') {
     'latitude'  => 35.677730,
     'longitude' => 139.754813
   );
-} else if ($text == '昼ごはん') {
+} else if ($text == 'ボタン') {
+  $response_format_text = array(
+    'type'     => 'template',
+    'altText'  => 'ボタンテスト',
+    'template' => array(
+      'type'    => 'buttons',
+      'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+      'title'   => 'ボタンタイトル' ,
+      'text'    => 'テキストメッセージ。タイトルがないときは最大160文字、タイトルがあるときは最大60文字',
+      'actions' => array(
+        array(
+          'type'=>'message',
+          'label'=>'ラベル1',
+          'text'=>'アクションメッセージ1' )
+        ),
+        array(
+          'type'=>'message',
+          'label'=>'ラベル2',
+          'text'=>'アクションメッセージ2' )
+        )
+      )
+    );
+  );
+} else if ($text == '確認') {
+  $response_format_text = array(
+    'type'     => 'template',
+    'altText'  => '確認テスト',
+    'template' => array(
+      'type'    => 'confirm',
+      'title'   => '確認タイトル' ,
+      'actions' => array(
+        array(
+          'type'=>'message',
+          'label'=>'ラベル1',
+          'text'=>'アクションメッセージ1' )
+        ),array(
+          'type'=>'message',
+          'label'=>'ラベル2',
+          'text'=>'アクションメッセージ2' )
+        )
+      )
+    );
+  );
+} else if ($text == 'カルーセル') {
+  $response_format_text = array(
+    'type'     => 'template',
+    'altText'  => 'カルーセルテスト',
+    'template' => array(
+      'type'    => 'carousel',
+      'columns' => array(
+        array(
+          'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+          'title'   => 'カルーセルタイトル1',
+          'text'    => 'タイトルか画像がある場合は最大60文字、どちらもない場合は最大120文字',
+          'actions' => array(
+            array(
+              'type' => 'message',
+              'label' => 'ラベルです',
+              'text' => 'メッセージ'
+            )
+          )
+        ),
+        array(
+          'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+          'title'   => 'カルーセルタイトル2',
+          'text'    => 'タイトルか画像がある場合は最大60文字、どちらもない場合は最大120文字',
+          'actions' => array(
+            array(
+              'type' => 'message',
+              'label' => 'ラベルです',
+              'text' => 'メッセージ'
+            )
+          )
+        )
+      );
+    );
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+else if ($text == '昼ごはん') {
   $response_format_text = array(
     'type' => 'text',
     'text' => '何が食べたいですか？'

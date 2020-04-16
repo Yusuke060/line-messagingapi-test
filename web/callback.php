@@ -195,7 +195,18 @@ if ($text == 'はい') {
           'type'  => 'message',
           'label' => 'ラベル1',
           'text'  => 'アクションメッセージ1'
-        )
+        ),
+        array(
+          'type'  => 'uri',
+          'uri' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
+          'label'  => 'ホームページ'
+        )/*,
+        array(
+          'type'  => 'datetimepicker',
+          'label' => '日時',
+          'data'  => 'ポストバックイベントのpostback.dataプロパティで返される文字列',
+          'mode'  => 'datetime'
+        )*/
       )
     )
   );
@@ -233,9 +244,9 @@ if ($text == 'はい') {
           'text'    => 'タイトルか画像がある場合は最大60文字、どちらもない場合は最大120文字',
           'actions' => array(
             array(
-              'type' => 'message',
-              'label' => 'ラベルです',
-              'text' => 'メッセージ'
+              'type'  => 'uri',
+              'uri' => 'https://line.me/R/nv/profile,
+              'label'  => 'プロフィール'
             )
           )
         ),
@@ -254,7 +265,7 @@ if ($text == 'はい') {
       )
     )
   );
-} else if ($text == 'あ') {
+}/* else if ($text == '画像カルーセル') {
   $response_format_text = array(
     'type'     => 'template',
     'altText'  => '画像カルーセルテスト',
@@ -270,7 +281,7 @@ if ($text == 'はい') {
               'text' => 'メッセージ1'
             )
           )
-        )/*,
+        ),
         array(
           'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
           'action' => array(
@@ -280,11 +291,11 @@ if ($text == 'はい') {
               'text' => 'メッセージ2'
             )
           )
-        )*/
+        )
       )
     )
   );
-}
+}*/
 
 
 

@@ -184,12 +184,12 @@ if ($text == 'はい') {
         array(
           'type'=>'message',
           'label'=>'ラベル1',
-          'text'=>'アクションメッセージ1' )
+          'text'=>'アクションメッセージ1'
         ),
         array(
           'type'=>'message',
           'label'=>'ラベル2',
-          'text'=>'アクションメッセージ2' )
+          'text'=>'アクションメッセージ2'
         )
       )
     );
@@ -205,11 +205,12 @@ if ($text == 'はい') {
         array(
           'type'=>'message',
           'label'=>'ラベル1',
-          'text'=>'アクションメッセージ1' )
-        ),array(
+          'text'=>'アクションメッセージ1'
+        ),
+        array(
           'type'=>'message',
           'label'=>'ラベル2',
-          'text'=>'アクションメッセージ2' )
+          'text'=>'アクションメッセージ2'
         )
       )
     );
@@ -248,21 +249,7 @@ if ($text == 'はい') {
       );
     );
   );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-else if ($text == '昼ごはん') {
+} else if ($text == '昼ごはん') {
   $response_format_text = array(
     'type' => 'text',
     'text' => '何が食べたいですか？'

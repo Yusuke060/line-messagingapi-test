@@ -139,7 +139,7 @@ if ($text == 'はい') {
     'type' => 'text',
     'text' => '【'.$text.'】とは何ですか？'
   );
-} /*else if ($text == '絵文字') {
+} else if ($text == '絵文字') {
   $response_format_text = array(
     'type'   => 'text',
     'text'   => '$ emoji'
@@ -149,7 +149,7 @@ if ($text == 'はい') {
       'sticonId'  => '001'
     )
   );
-}*/ else if ($text == 'スタンプ') {
+} else if ($text == 'スタンプ') {
   $response_format_text = array(
     'type'      => 'sticker',
     'packageId' => 1,
@@ -205,7 +205,7 @@ if ($text == 'はい') {
     'altText'  => '確認テスト',
     'template' => array(
       'type'    => 'confirm',
-      'title'   => '確認タイトル' ,
+      'text'   => '確認タイトル',
       'actions' => array(
         array(
           'type'=>'message',

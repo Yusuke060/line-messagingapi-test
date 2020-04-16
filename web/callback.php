@@ -171,8 +171,7 @@ if ($text == 'はい') {
     'latitude'  => 35.677730,
     'longitude' => 139.754813
   );
-}
-/*else if ($text == 'ボタン') {
+}else if ($text == 'ボタン') {
   $response_format_text = array(
     'type'     => 'template',
     'altText'  => 'ボタンテスト',
@@ -190,7 +189,7 @@ if ($text == 'はい') {
       )
     );
   );
-} else if ($text == '確認') {
+} /*else if ($text == '確認') {
   $response_format_text = array(
     'type'     => 'template',
     'altText'  => '確認テスト',

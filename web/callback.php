@@ -139,7 +139,17 @@ if ($text == 'はい') {
     'type' => 'text',
     'text' => '【'.$text.'】とは何ですか？'
   );
-} else if ($text == 'スタンプ') {
+} /*else if ($text == '絵文字') {
+  $response_format_text = array(
+    'type'   => 'text',
+    'text'   => '$ emoji'
+    'sticon' => array(
+      'index'     => 0,
+      'productId' => '5ac1bfd5040ab15980c9b435',
+      'sticonId'  => '001'
+    )
+  );
+}*/ else if ($text == 'スタンプ') {
   $response_format_text = array(
     'type'      => 'sticker',
     'packageId' => 1,
@@ -171,7 +181,7 @@ if ($text == 'はい') {
     'latitude'  => 35.677730,
     'longitude' => 139.754813
   );
-}else if ($text == 'ボタン') {
+} else if ($text == 'ボタン') {
   $response_format_text = array(
     'type'     => 'template',
     'altText'  => 'ボタンテスト',
@@ -182,14 +192,14 @@ if ($text == 'はい') {
       'text'    => 'テキストメッセージ。タイトルがないときは最大160文字、タイトルがあるときは最大60文字',
       'actions' => array(
         array(
-          'type'=>'message',
-          'label'=>'ラベル1',
-          'text'=>'アクションメッセージ1'
+          'type'  => 'message',
+          'label' => 'ラベル1',
+          'text'  => 'アクションメッセージ1'
         )
       )
-    );
+    )
   );
-} /*else if ($text == '確認') {
+} else if ($text == '確認') {
   $response_format_text = array(
     'type'     => 'template',
     'altText'  => '確認テスト',
@@ -208,7 +218,7 @@ if ($text == 'はい') {
           'text'=>'アクションメッセージ2'
         )
       )
-    );
+    )
   );
 } else if ($text == 'カルーセル') {
   $response_format_text = array(
@@ -241,11 +251,10 @@ if ($text == 'はい') {
             )
           )
         )
-      );
-    );
+      )
+    )
   );
 }
-*/
 
 
 
@@ -256,11 +265,6 @@ else if ($text == '昼ごはん') {
   $response_format_text = array(
     'type' => 'text',
     'text' => '何が食べたいですか？'
-  );
-} else if ($text == '昼') {
-  $response_format_text = array(
-    'type' => 'text',
-    'text' => '【'.$text.'】とは何ですか？'
   );
 } else if ($text == '111') {
   $response_format_text = array(

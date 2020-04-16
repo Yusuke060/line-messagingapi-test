@@ -245,7 +245,7 @@ if ($text == 'はい') {
           'actions' => array(
             array(
               'type'  => 'uri',
-              'uri' => 'https://line.me/R/nv/profile,
+              'uri' => 'https://line.me/R/nv/profile',
               'label'  => 'プロフィール'
             )
           )

@@ -9,7 +9,7 @@ $jsonObj = json_decode($json_string);
 // イベント種別（今回は2種類のみ）
 // message（メッセージが送信されると発生）
 // postback（ポストバックオプションに返事されると送信）
-$type = $json_obj->{"events"}[0]->{"type"};
+$type = $jsonObj->{"events"}[0]->{"type"};
 
 $obj = $jsonObj->{"events"}[0]->{"message"}->{"type"};
 //メッセージ取得
@@ -162,7 +162,12 @@ if ($text == 'はい') {
     'packageId' => 1,
     'stickerId' => 1
   );
-} else if (ctype_digit($text)) {
+} else if ($text == '昼ごはん') {
+  $response_format_text = array(
+    'type' => 'text',
+    'text' => '【'.$text.'】とは何ですか？'
+  );
+} else if ($text == '111') {
   $response_format_text = array(
     'type' => 'text',
     'text' => '【'.$text.'】ですね？'

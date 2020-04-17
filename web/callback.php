@@ -215,7 +215,7 @@ if($type == 'message') {
                 array(
                   'type'  => 'datetimepicker',
                   'label' => '日時',
-                  'data'  => 'datatemp',
+                  'data'  => 'datetemp',
                   'mode'  => 'date'
                 )
               )

@@ -146,166 +146,166 @@ if($type == 'message') {
             )
           );
         } else if ($text == 'おはよう') {
-          $response_format_text = array(
-            'type' => 'text',
-            'text' => '【'.$text.'】とは何ですか？'
-          );
+            $response_format_text = array(
+                'type' => 'text',
+                'text' => '【'.$text.'】とは何ですか？'
+            );
         } /*else if ($text == '絵文字') {
-          $response_format_text = array(
-            'type'   => 'text',
-            'text'   => '$ emoji'
-            'sticon' => array(
-              'index'     => 0,
-              'productId' => '5ac1bfd5040ab15980c9b435',
-              'sticonId'  => '001'
-            )
-          );
+           $response_format_text = array(
+                'type'   => 'text',
+                'text'   => '$ emoji'
+                'sticon' => array(
+                    'index'     => 0,
+                    'productId' => '5ac1bfd5040ab15980c9b435',
+                    'sticonId'  => '001'
+                )
+           );
         } */else if ($text == 'スタンプ') {
-          $response_format_text = array(
-            'type'      => 'sticker',
-            'packageId' => 1,
-            'stickerId' => 1
-          );
+            $response_format_text = array(
+                'type'      => 'sticker',
+                'packageId' => 1,
+                'stickerId' => 1
+            );
         } else if ($text == '写真') {
-          $response_format_text = array(
-            'type'      => 'image',
-            'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
-            'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img2-3.jpg'
-          );
+            $response_format_text = array(
+                'type'      => 'image',
+                'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
+                'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img2-3.jpg'
+            );
         } else if ($text == '動画') {
-          $response_format_text = array(
-            'type'               => 'video',
-            'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.mp4',
-            'previewImageUrl'    => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg'
-          );
+            $response_format_text = array(
+                'type'               => 'video',
+                'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.mp4',
+                'previewImageUrl'    => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg'
+            );
         } else if ($text == '音声') {
-          $response_format_text = array(
-            'type'               => 'audio',
-            'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/oimtsm.m4a',
-            'duration'    => 2000
-          );
+            $response_format_text = array(
+                'type'               => 'audio',
+                'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/oimtsm.m4a',
+                'duration'    => 2000
+            );
         } else if ($text == '位置') {
-          $response_format_text = array(
-            'type'      => 'location',
-            'title'     => '皇居',
-            'address'   => '東京都千代田区千代田1番1号',
-            'latitude'  => 35.677730,
-            'longitude' => 139.754813
-          );
+            $response_format_text = array(
+                'type'      => 'location',
+                'title'     => '皇居',
+                'address'   => '東京都千代田区千代田1番1号',
+                'latitude'  => 35.677730,
+                'longitude' => 139.754813
+            );
         } else if ($text == 'ボタン') {
-          $response_format_text = array(
-            'type'     => 'template',
-            'altText'  => 'ボタンテスト',
-            'template' => array(
-              'type'    => 'buttons',
-              'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
-              'title'   => 'ボタンタイトル' ,
-              'text'    => 'テキストメッセージ。タイトルがないときは最大160文字、タイトルがあるときは最大60文字',
-              'actions' => array(
-                array(
-                  'type'  => 'message',
-                  'label' => 'ラベル1',
-                  'text'  => 'アクションメッセージ1'
-                ),
-                array(
-                  'type'  => 'uri',
-                  'uri' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
-                  'label'  => 'ホームページ'
-                ),
-                array(
-                  'type'  => 'datetimepicker',
-                  'label' => '日時',
-                  'data'  => 'datetemp',
-                  'mode'  => 'date'
+            $response_format_text = array(
+                'type'     => 'template',
+                'altText'  => 'ボタンテスト',
+                'template' => array(
+                    'type'    => 'buttons',
+                    'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+                    'title'   => 'ボタンタイトル' ,
+                    'text'    => 'テキストメッセージ。タイトルがないときは最大160文字、タイトルがあるときは最大60文字',
+                    'actions' => array(
+                        array(
+                            'type'  => 'message',
+                            'label' => 'ラベル1',
+                            'text'  => 'アクションメッセージ1'
+                        ),
+                        array(
+                            'type'  => 'uri',
+                            'uri' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
+                            'label'  => 'ホームページ'
+                        ),
+                        array(
+                            'type'  => 'datetimepicker',
+                            'label' => '日時',
+                            'data'  => 'datetemp',
+                            'mode'  => 'date'
+                        )
+                    )
                 )
-              )
-            )
-          );
+            );
         } else if ($text == '確認') {
-          $response_format_text = array(
-            'type'     => 'template',
-            'altText'  => '確認テスト',
-            'template' => array(
-              'type'    => 'confirm',
-              'text'   => '確認タイトル',
-              'actions' => array(
-                array(
-                  'type'=>'message',
-                  'label'=>'ラベル1',
-                  'text'=>'アクションメッセージ1'
-                ),
-                array(
-                  'type'=>'message',
-                  'label'=>'ラベル2',
-                  'text'=>'アクションメッセージ2'
+            $response_format_text = array(
+                'type'     => 'template',
+                'altText'  => '確認テスト',
+                'template' => array(
+                    'type'    => 'confirm',
+                    'text'   => '確認タイトル',
+                    'actions' => array(
+                        array(
+                            'type'=>'message',
+                            'label'=>'ラベル1',
+                            'text'=>'アクションメッセージ1'
+                        ),
+                        array(
+                            'type'=>'message',
+                            'label'=>'ラベル2',
+                            'text'=>'アクションメッセージ2'
+                        )
+                    )
                 )
-              )
-            )
-          );
+            );
         } else if ($text == 'カルーセル') {
-          $response_format_text = array(
-            'type'     => 'template',
-            'altText'  => 'カルーセルテスト',
-            'template' => array(
-              'type'    => 'carousel',
-              'columns' => array(
-                array(
-                  'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
-                  'title'   => 'カルーセルタイトル1',
-                  'text'    => 'タイトルか画像がある場合は最大60文字、どちらもない場合は最大120文字',
-                  'actions' => array(
-                    array(
-                      'type'  => 'uri',
-                      'uri' => 'https://line.me/R/nv/profile',
-                      'label'  => 'プロフィール'
+            $response_format_text = array(
+                'type'     => 'template',
+                'altText'  => 'カルーセルテスト',
+                'template' => array(
+                    'type'    => 'carousel',
+                    'columns' => array(
+                        array(
+                            'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+                            'title'   => 'カルーセルタイトル1',
+                            'text'    => 'タイトルか画像がある場合は最大60文字、どちらもない場合は最大120文字',
+                            'actions' => array(
+                                array(
+                                    'type'  => 'uri',
+                                    'uri' => 'https://line.me/R/nv/profile',
+                                    'label'  => 'プロフィール'
+                                )
+                            )
+                        ),
+                        array(
+                            'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+                            'title'   => 'カルーセルタイトル2',
+                            'text'    => 'タイトルか画像がある場合は最大60文字、どちらもない場合は最大120文字',
+                            'actions' => array(
+                                array(
+                                    'type' => 'message',
+                                    'label' => 'ラベルです',
+                                    'text' => 'メッセージ'
+                                )
+                            )
+                        )
                     )
-                  )
-                ),
-                array(
-                  'thumbnailImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
-                  'title'   => 'カルーセルタイトル2',
-                  'text'    => 'タイトルか画像がある場合は最大60文字、どちらもない場合は最大120文字',
-                  'actions' => array(
-                    array(
-                      'type' => 'message',
-                      'label' => 'ラベルです',
-                      'text' => 'メッセージ'
-                    )
-                  )
                 )
-              )
-            )
-          );
+            );
         }/* else if ($text == '画像カルーセル') {
-          $response_format_text = array(
-            'type'     => 'template',
-            'altText'  => '画像カルーセルテスト',
-            'template' => array(
-              'type'    => 'image_carousel',
-              'columns' => array(
-                array(
-                  'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
-                  'action' => array(
-                    array(
-                      'type' => 'message',
-                      'label' => 'ラベル1',
-                      'text' => 'メッセージ1'
+            $response_format_text = array(
+                'type'     => 'template',
+                'altText'  => '画像カルーセルテスト',
+                'template' => array(
+                    'type'    => 'image_carousel',
+                    'columns' => array(
+                        array(
+                            'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
+                            'action' => array(
+                                array(
+                                    'type' => 'message',
+                                    'label' => 'ラベル1',
+                                    'text' => 'メッセージ1'
+                                )
+                            )
+                        ),
+                        array(
+                            'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
+                            'action' => array(
+                                array(
+                                    'type' => 'message',
+                                    'label' => 'ラベル2',
+                                    'text' => 'メッセージ2'
+                                )
+                            )
+                        )
                     )
-                  )
-                ),
-                array(
-                  'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
-                  'action' => array(
-                    array(
-                      'type' => 'message',
-                      'label' => 'ラベル2',
-                      'text' => 'メッセージ2'
-                    )
-                  )
                 )
-              )
-            )
-          );
+            );
         }*/
 
 
@@ -314,15 +314,15 @@ if($type == 'message') {
 
 
         else if ($text == '昼ごはん') {
-          $response_format_text = array(
-            'type' => 'text',
-            'text' => '何が食べたいですか？'
-          );
+            $response_format_text = array(
+                'type' => 'text',
+                'text' => '何が食べたいですか？'
+            );
         } else if ($text == '111') {
-          $response_format_text = array(
-            'type' => 'text',
-            'text' => '【'.$text.'】ですね？'
-          );
+            $response_format_text = array(
+                'type' => 'text',
+                'text' => '【'.$text.'】ですね？'
+            );
         } else {
           $response_format_text = array(
             "type" => "template",

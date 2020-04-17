@@ -348,13 +348,13 @@ if($type == 'message') {
     }
 }else if($type == 'postback') {
     // 送られたデータ
-    $postback = $json_obj->{'events'}[0]->{'postback'}->{'data'};
+    $postback = $jsonObj->{'events'}[0]->{'postback'}->{'data'};
     
     if($postback === 'datetemp') {
         // 日にち選択時
         $response_format_text = array(
             'type' => 'text',
-            'text' => '【'.$json_obj->{'events'}[0]->{'postback'}->{'params'}->{'date'}.'】にご予約を承りました。'
+            'text' => '【'.$jsonObj->{'events'}[0]->{'postback'}->{'params'}->{'date'}.'】にご予約を承りました。'
         );
     }
 }

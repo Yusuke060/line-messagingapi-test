@@ -230,14 +230,14 @@ if($type == 'message') {
                     'text'   => '確認タイトル',
                     'actions' => array(
                         array(
-                            'type'=>'message',
-                            'label'=>'ラベル1',
-                            'text'=>'アクションメッセージ1'
+                            'type'  => 'postback',
+                            'label' => '参加',
+                            'data'  => 'sanka'
                         ),
                         array(
-                            'type'=>'message',
-                            'label'=>'ラベル2',
-                            'text'=>'アクションメッセージ2'
+                            'type'  => 'postback',
+                            'label' => '不参加',
+                            'data'  => 'fusanka'
                         )
                     )
                 )
@@ -308,11 +308,6 @@ if($type == 'message') {
             );
         }*/
 
-
-
-
-
-
         else if ($text == '昼ごはん') {
             $response_format_text = array(
                 'type' => 'text',
@@ -355,6 +350,16 @@ if($type == 'message') {
         $response_format_text = array(
             'type' => 'text',
             'text' => '【'.$jsonObj->{'events'}[0]->{'postback'}->{'params'}->{'date'}.'】にご予約を承りました。'
+        );
+    } else if($postback === 'sanka') {
+        $response_format_text = array(
+            'type' => 'text',
+            'text' => '参加を受け付けました。'
+        );
+    } else if($postback === 'fusanka') {
+        $response_format_text = array(
+            'type' => 'text',
+            'text' => '不参加を受け付けました。'
         );
     }
 }

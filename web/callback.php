@@ -160,7 +160,30 @@ if($type == 'message') {
                     'sticonId'  => '001'
                 )
            );
-        } */else if ($text == 'スタンプ') {
+        } */ else if ($text == 'クイック') {
+            $response_format_text = array(
+                'type' => 'text',
+                'text' => '下から選んでください。',
+                'quickReply' => array(
+                    'items' => array(
+                        array(
+                            'type' => 'action',
+                            'action' => array(
+                                'type' => 'cameraRoll',
+                                'label' => 'Send photo'
+                            )
+                        ),
+                        array(
+                            'type' => 'action',
+                            'action' => array(
+                                'type' => 'camera',
+                                'label' => 'Open camera'
+                            )
+                        )
+                    )
+                )
+            );
+        }else if ($text == 'スタンプ') {
             $response_format_text = array(
                 'type'      => 'sticker',
                 'packageId' => 1,

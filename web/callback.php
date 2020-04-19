@@ -157,8 +157,8 @@ if($type == 'message') {
                 'emojis' => array(
                     array(
                         'index'     => 0,
-                        'productId' => '5ac1bfd5040ab15980c9b435',
-                        'sticonId'  => '001'
+                        'productId' => '5ac21542031a6752fb806d55',
+                        'sticonId'  => '117'
                     )
                 )
            );
@@ -301,7 +301,7 @@ if($type == 'message') {
                     )
                 )
             );
-        }/* else if ($text == '画像カルーセル') {
+        } else if ($text == '画像カルーセル') {
             $response_format_text = array(
                 'type'     => 'template',
                 'altText'  => '画像カルーセルテスト',
@@ -309,7 +309,7 @@ if($type == 'message') {
                     'type'    => 'image_carousel',
                     'columns' => array(
                         array(
-                            'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
+                            'imageUrl' => https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
                             'action' => array(
                                 array(
                                     'type' => 'message',
@@ -319,7 +319,7 @@ if($type == 'message') {
                             )
                         ),
                         array(
-                            'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/img1.jpg',
+                            'imageUrl' => https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
                             'action' => array(
                                 array(
                                     'type' => 'message',
@@ -331,9 +331,7 @@ if($type == 'message') {
                     )
                 )
             );
-        }*/
-
-        else if ($text == '昼ごはん') {
+        } else if ($text == '昼ごはん') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '何が食べたいですか？'

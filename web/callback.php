@@ -14,20 +14,22 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 // message（メッセージが送信されると発生）
 // postback（ポストバックオプションに返事されると送信）
 $type = $jsonObj->{"events"}[0]->{"type"};
-
-// メッセージオブジェクト（今回は4種類のみ）
-// text（テキストを受け取った時）
-// sticker（スタンプを受け取った時）
-// image（画像を受け取った時）
-// location（位置情報を受け取った時）
-$msg_obj = $jsonObj->{"events"}[0]->{"message"}->{"type"};
-
-//メッセージ取得
-$text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
+    
 
 
 if($type == 'message') {
-    //メッセージ以外のときは何も返さず終了
+    
+    // メッセージオブジェクト（今回は4種類のみ）
+    // text（テキストを受け取った時）
+    // sticker（スタンプを受け取った時）
+    // image（画像を受け取った時）
+    // location（位置情報を受け取った時）
+    $msg_obj = $jsonObj->{"events"}[0]->{"message"}->{"type"};
+    
+    //メッセージ取得
+    $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
+    
+    //text以外のときは何も返さず終了
     if($msg_obj != "text"){
         exit;
     }
@@ -150,7 +152,7 @@ if($type == 'message') {
                 'type' => 'text',
                 'text' => '【'.$text.'】とは何ですか？'
             );
-        } else if ($text == '絵文字') {
+        } /*else if ($text == '絵文字') {
            $response_format_text = array(
                 'type'   => 'text',
                 'text'   => '$ emoji',
@@ -162,7 +164,7 @@ if($type == 'message') {
                     )
                 )
            );
-        } else if ($text == 'クイック') {
+        }*/ else if ($text == 'クイック') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '下から選んでください。',
@@ -301,7 +303,7 @@ if($type == 'message') {
                     )
                 )
             );
-        } else if ($text == '画像カルーセル') {
+        } /*else if ($text == '画像カルーセル') {
             $response_format_text = array(
                 'type'     => 'template',
                 'altText'  => '画像カルーセルテスト',
@@ -309,7 +311,7 @@ if($type == 'message') {
                     'type'    => 'image_carousel',
                     'columns' => array(
                         array(
-                            'imageUrl' => https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+                            'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
                             'action' => array(
                                 array(
                                     'type' => 'message',
@@ -319,7 +321,7 @@ if($type == 'message') {
                             )
                         ),
                         array(
-                            'imageUrl' => https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
+                            'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
                             'action' => array(
                                 array(
                                     'type' => 'message',
@@ -331,7 +333,7 @@ if($type == 'message') {
                     )
                 )
             );
-        } else if ($text == '昼ごはん') {
+        }*/ else if ($text == '昼ごはん') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '何が食べたいですか？'

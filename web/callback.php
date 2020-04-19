@@ -150,17 +150,19 @@ if($type == 'message') {
                 'type' => 'text',
                 'text' => '【'.$text.'】とは何ですか？'
             );
-        } /*else if ($text == '絵文字') {
+        } else if ($text == '絵文字') {
            $response_format_text = array(
                 'type'   => 'text',
-                'text'   => '$ emoji'
-                'sticon' => array(
-                    'index'     => 0,
-                    'productId' => '5ac1bfd5040ab15980c9b435',
-                    'sticonId'  => '001'
+                'text'   => '$ emoji',
+                'emojis' => array(
+                    array(
+                        'index'     => 0,
+                        'productId' => '5ac1bfd5040ab15980c9b435',
+                        'sticonId'  => '001'
+                    )
                 )
            );
-        } */ else if ($text == 'クイック') {
+        } else if ($text == 'クイック') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '下から選んでください。',

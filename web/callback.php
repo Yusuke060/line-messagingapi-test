@@ -13,10 +13,34 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 // イベント種別（今回は2種類のみ）
 // message（メッセージが送信されると発生）
 // postback（ポストバックオプションに返事されると送信）
+// join (グループに参加)
 $type = $jsonObj->{"events"}[0]->{"type"};
     
 
 
+if($type == 'join') {
+    $response_format_text = array(
+        'type'     => 'template',
+        'altText'  => 'ようこそ',
+        'template' => array(
+            'type'    => 'confirm',
+            'text'   => 'ご存知ですか？',
+            'actions' => array(
+                array(
+                    'type'  => 'postback',
+                    'label' => '知ってる！',
+                    'data'  => 'shitteru'
+                ),
+                array(
+                    'type'  => 'postback',
+                    'label' => 'しらない',
+                    'data'  => 'hatsumimi'
+                )
+            )
+        )
+    );
+}
+    
 if($type == 'message') {
     
     // メッセージオブジェクト（今回は4種類のみ）
@@ -386,6 +410,16 @@ if($type == 'message') {
             'type' => 'text',
             'text' => '不参加を受け付けました。'
         );
+    } else if($postback === 'shitteru') {
+           $response_format_text = array(
+               'type' => 'text',
+               'text' => 'ありがとうございます！'
+           );
+    } else if($postback === 'hatsumimi') {
+           $response_format_text = array(
+               'type' => 'text',
+               'text' => 'これからよろしくお願いします！'
+           );
     }
 }
 

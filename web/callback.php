@@ -368,26 +368,33 @@ if($type == 'message') {
                 'text' => '【'.$text.'】ですね？'
             );
         } else {
-          $response_format_text = array(
-            "type" => "template",
-            "altText" => "こんにちは 何かご用ですか？（はい／いいえ）",
-            "template" => array(
-                "type" => "confirm",
-                "text" => "こんにちは 何かご用ですか？",
-                "actions" => array(
-                    array(
-                      "type" => "message",
-                      "label" => "はい",
-                      "text" => "はい"
-                    ),
-                    array(
-                      "type" => "message",
-                      "label" => "いいえ",
-                      "text" => "いいえ"
-                    )
+            $response_format_text = array(
+                'type'     => 'template',
+                'altText'  => '使い方',
+                'template' => array(
+                  　　'type'    => 'buttons',
+     　　             'title'   => '使い方' ,
+     　　             'text'    => '以下のボタンを押してみてください',
+     　　             'actions' => array(
+     　　                 array(
+     　　                     'type'  => 'message',
+    　　                      'label' => '昼ごはん',
+       　　                   'text'  => '昼ごはん'
+          　　            ),
+             　　         array(
+                　　          'type'  => 'uri',
+                   　　       'uri' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
+                      　　    'label'  => 'ホームページ'
+ 　　                    ),
+    　　                  array(
+       　　                   'type'  => 'datetimepicker',
+          　　                'label' => '日時',
+             　　             'data'  => 'datetemp',
+                　　          'mode'  => 'date'
+                   　　   )
+      　　            )
                 )
-            )
-          );
+            );
         }
     }
 }else if($type == 'postback') {

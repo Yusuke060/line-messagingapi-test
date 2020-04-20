@@ -64,7 +64,7 @@ if($type == 'message') {
                 'type' => 'text',
                 'text' => '【'.$text.'】とは何ですか？'
             );
-        } /*else if ($text == '絵文字') {
+        } else if ($text == '絵文字') {
            $response_format_text = array(
                 'type'   => 'text',
                 'text'   => '$ emoji',
@@ -76,7 +76,7 @@ if($type == 'message') {
                     )
                 )
            );
-        }*/ else if ($text == 'クイック') {
+        } else if ($text == 'クイック') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '下から選んでください。',

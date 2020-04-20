@@ -64,6 +64,21 @@ if($type == 'message') {
                 'type' => 'text',
                 'text' => '【'.$text.'】とは何ですか？'
             );
+        } else if ($text == '昼ごはん') {
+                   $response_format_text = array(
+                       'type' => 'text',
+                       'text' => '何が食べたいですか？'
+                   );
+        } else if ($text == '111') {
+                   $response_format_text = array(
+                       'type' => 'text',
+                       'text' => '【'.$text.'】ですね？'
+                   );
+        } else if ($text == 'テキスト') {
+            $response_format_text = array(
+                'type' => 'text',
+                'text' => 'テキストメッセージ'
+            );
         } else if ($text == '絵文字') {
            $response_format_text = array(
                 'type'   => 'text',
@@ -76,30 +91,7 @@ if($type == 'message') {
                     )
                 )
            );
-        } else if ($text == 'クイック') {
-            $response_format_text = array(
-                'type' => 'text',
-                'text' => '下から選んでください。',
-                'quickReply' => array(
-                    'items' => array(
-                        array(
-                            'type' => 'action',
-                            'action' => array(
-                                'type' => 'cameraRoll',
-                                'label' => 'Send photo'
-                            )
-                        ),
-                        array(
-                            'type' => 'action',
-                            'action' => array(
-                                'type' => 'camera',
-                                'label' => 'Open camera'
-                            )
-                        )
-                    )
-                )
-            );
-        }else if ($text == 'スタンプ') {
+        } else if ($text == 'スタンプ') {
             $response_format_text = array(
                 'type'      => 'sticker',
                 'packageId' => 1,
@@ -241,16 +233,29 @@ if($type == 'message') {
                     )
                 )
             );
-        } else if ($text == '昼ごはん') {
-            $response_format_text = array(
-                'type' => 'text',
-                'text' => '何が食べたいですか？'
-            );
-        } else if ($text == '111') {
-            $response_format_text = array(
-                'type' => 'text',
-                'text' => '【'.$text.'】ですね？'
-            );
+        } else if ($text == 'クイック') {
+                   $response_format_text = array(
+                       'type' => 'text',
+                       'text' => '下から選んでください。',
+                       'quickReply' => array(
+                           'items' => array(
+                               array(
+                                   'type' => 'action',
+                                   'action' => array(
+                                       'type' => 'cameraRoll',
+                                       'label' => 'Send photo'
+                                   )
+                               ),
+                               array(
+                                   'type' => 'action',
+                                   'action' => array(
+                                       'type' => 'camera',
+                                       'label' => 'Open camera'
+                                   )
+                               )
+                           )
+                       )
+                   );
         } else {
             $response_format_text = array(
                 'type'     => 'template',

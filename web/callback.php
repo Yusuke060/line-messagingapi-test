@@ -63,16 +63,12 @@ if($type == 'message') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '何が食べたいですか？'
-            ),
-            array(
-                'type' => 'text',
-                'text' => 'ご飯ですか？'
             );
         } else if ($text == 'おはよう') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '【'.$text.'】とは何ですか？'
-        );
+            );
         } else if ($text == '111') {
             $response_format_text = array(
                 'type' => 'text',

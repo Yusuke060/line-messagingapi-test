@@ -215,7 +215,7 @@ if($type == 'message') {
                     )
                 )
             );
-        } /*else if ($text == '画像カルーセル') {
+        } else if ($text == '画像カルーセル') {
             $response_format_text = array(
                 'type'     => 'template',
                 'altText'  => '画像カルーセルテスト',
@@ -225,27 +225,23 @@ if($type == 'message') {
                         array(
                             'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
                             'action' => array(
-                                array(
-                                    'type' => 'message',
-                                    'label' => 'ラベル1',
-                                    'text' => 'メッセージ1'
-                                )
+                                'type' => 'message',
+                                'label' => 'ラベル1',
+                                'text' => 'メッセージ1'
                             )
                         ),
                         array(
                             'imageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/kourin.jpg',
                             'action' => array(
-                                array(
-                                    'type' => 'message',
-                                    'label' => 'ラベル2',
-                                    'text' => 'メッセージ2'
-                                )
+                                'type' => 'message',
+                                'label' => 'ラベル2',
+                                'text' => 'メッセージ2'
                             )
                         )
                     )
                 )
             );
-        }*/ else if ($text == '昼ごはん') {
+        } else if ($text == '昼ごはん') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '何が食べたいですか？'

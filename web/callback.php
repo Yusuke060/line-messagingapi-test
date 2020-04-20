@@ -72,7 +72,7 @@ if($type == 'message') {
                     array(
                         'index'     => 0,
                         'productId' => '5ac21542031a6752fb806d55',
-                        'sticonId'  => '117'
+                        'emojiId'  => '117'
                     )
                 )
            );

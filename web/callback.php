@@ -59,119 +59,7 @@ if($type == 'message') {
     }
 
     if($msg_obj == "text"){
-        //返信データ作成
-        if ($text == 'はい') {
-          $response_format_text = array(
-            "type" => "template",
-            "altText" => "こちらの〇〇はいかがですか？",
-            "template" => array(
-              "type" => "buttons",
-              "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
-              "title" => "○○レストラン",
-              "text" => "お探しのレストランはこれですね",
-              "actions" => array(
-                  array(
-                    "type" => "postback",
-                    "label" => "予約する",
-                    "data" => "action=buy&itemid=123"
-                  ),
-                  array(
-                    "type" => "postback",
-                    "label" => "電話する",
-                    "data" => "action=pcall&itemid=123"
-                  ),
-                  array(
-                    "type" => "uri",
-                    "label" => "詳しく見る",
-                    "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-                  ),
-                  array(
-                    "type" => "message",
-                    "label" => "違うやつ",
-                    "text" => "違うやつお願い"
-                  )
-              )
-            )
-          );
-        } else if ($text == 'いいえ') {
-          exit;
-        } else if ($text == '違うやつお願い') {
-          $response_format_text = array(
-            "type" => "template",
-            "altText" => "候補を３つご案内しています。",
-            "template" => array(
-              "type" => "carousel",
-              "columns" => array(
-                  array(
-                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
-                    "title" => "●●レストラン",
-                    "text" => "こちらにしますか？",
-                    "actions" => array(
-                      array(
-                          "type" => "postback",
-                          "label" => "予約する",
-                          "data" => "action=rsv&itemid=111"
-                      ),
-                      array(
-                          "type" => "postback",
-                          "label" => "電話する",
-                          "data" => "action=pcall&itemid=111"
-                      ),
-                      array(
-                          "type" => "uri",
-                          "label" => "詳しく見る（ブラウザ起動）",
-                          "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-                      )
-                    )
-                  ),
-                  array(
-                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
-                    "title" => "▲▲レストラン",
-                    "text" => "それともこちら？（２つ目）",
-                    "actions" => array(
-                      array(
-                          "type" => "postback",
-                          "label" => "予約する",
-                          "data" => "action=rsv&itemid=222"
-                      ),
-                      array(
-                          "type" => "postback",
-                          "label" => "電話する",
-                          "data" => "action=pcall&itemid=222"
-                      ),
-                      array(
-                          "type" => "uri",
-                          "label" => "詳しく見る（ブラウザ起動）",
-                          "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-                      )
-                    )
-                  ),
-                  array(
-                    "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
-                    "title" => "■■レストラン",
-                    "text" => "はたまたこちら？（３つ目）",
-                    "actions" => array(
-                      array(
-                          "type" => "postback",
-                          "label" => "予約する",
-                          "data" => "action=rsv&itemid=333"
-                      ),
-                      array(
-                          "type" => "postback",
-                          "label" => "電話する",
-                          "data" => "action=pcall&itemid=333"
-                      ),
-                      array(
-                          "type" => "uri",
-                          "label" => "詳しく見る（ブラウザ起動）",
-                          "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-                      )
-                    )
-                  )
-              )
-            )
-          );
-        } else if ($text == 'おはよう') {
+        if ($text == 'おはよう') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '【'.$text.'】とは何ですか？'
@@ -372,27 +260,27 @@ if($type == 'message') {
                 'type'     => 'template',
                 'altText'  => '使い方',
                 'template' => array(
-                  　　'type'    => 'buttons',
-     　　             'title'   => '使い方' ,
-     　　             'text'    => '以下のボタンを押してみてください',
-     　　             'actions' => array(
-     　　                 array(
-     　　                     'type'  => 'message',
-    　　                      'label' => '昼ごはん',
-       　　                   'text'  => '昼ごはん'
-          　　            ),
-             　　         array(
-                　　          'type'  => 'uri',
-                   　　       'uri' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
-                      　　    'label'  => 'ホームページ'
- 　　                    ),
-    　　                  array(
-       　　                   'type'  => 'datetimepicker',
-          　　                'label' => '日時',
-             　　             'data'  => 'datetemp',
-                　　          'mode'  => 'date'
-                   　　   )
-      　　            )
+                    'type'    => 'buttons',
+                    'title'   => '使い方' ,
+                    'text'    => '以下のボタンを押してみてください',
+                    'actions' => array(
+                        array(
+                            'type'  => 'message',
+                            'label' => '昼ごはん',
+                            'text'  => '昼ごはん'
+                        ),
+                        array(
+                            'type'  => 'uri',
+                            'uri' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
+                            'label'  => 'ホームページ'
+                        ),
+                        array(
+                            'type'  => 'datetimepicker',
+                            'label' => '日時',
+                            'data'  => 'datetemp',
+                            'mode'  => 'date'
+                        )
+                    )
                 )
             );
         }

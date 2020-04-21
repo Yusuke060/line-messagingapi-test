@@ -69,16 +69,18 @@ if($type == 'message') {
                 'type' => 'text',
                 'text' => '【'.$text.'】とは何ですか？'
             );
-        } else if ($text == '111') {
-            $response_format_text = array(
-                'type' => 'text',
-                'text' => '【'.$text.'】ですね？'
-            );
         } else if (is_numeric($text)) {
-            $response_format_text = array(
-                'type' => 'text',
-                'text' => '数字【'.$text.'】ですね？'
-            );
+            if (is_int($text)){
+                $response_format_text = array(
+                    'type' => 'text',
+                    'text' => '整数【'.$text.'】ですね？'
+                );
+            } else{
+                $response_format_text = array(
+                    'type' => 'text',
+                    'text' => '整数を入力してください。'
+                );
+            }
         }
         
         

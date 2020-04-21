@@ -60,13 +60,10 @@ if($type == 'message') {
 
     if($msg_obj == "text"){
         if ($text == '昼ごはん') {
-            $response_format_text = (array(
+            $response_format_text = array(
                 'type' => 'text',
                 'text' => '何が食べたいですか？'
-            ),array(
-                'type' => 'text',
-                'text' => '何が食べたいですか？'
-            ));
+            );
         } else if ($text == 'おはよう') {
             $response_format_text = array(
                 'type' => 'text',
@@ -76,6 +73,11 @@ if($type == 'message') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '【'.$text.'】ですね？'
+            );
+        } else if (is_numeric($text)) {
+            $response_format_text = array(
+                'type' => 'text',
+                'text' => '数字【'.$text.'】ですね？'
             );
         }
         

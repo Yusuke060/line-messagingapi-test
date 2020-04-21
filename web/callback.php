@@ -65,8 +65,24 @@ if($type == 'message') {
                 'text' => '何が食べたいですか？'
             );
             $response_format_text2 = array(
-                'type' => 'text',
-                'text' => '何が食べたい？'
+                'type'     => 'template',
+                'altText'  => '確認',
+                'template' => array(
+                    'type'    => 'confirm',
+                    'text'   => 'どちらを選びますか？',
+                    'actions' => array(
+                        array(
+                            'type'  => 'postback',
+                            'label' => 'ランダム',
+                            'data'  => 'randamu'
+                        ),
+                        array(
+                            'type'  => 'postback',
+                            'label' => '選択肢',
+                            'data'  => 'erabu'
+                        )
+                    )
+                )
             );
         } else if ($text == 'おはよう') {
             $response_format_text = array(
@@ -351,6 +367,23 @@ if($type == 'message') {
                'type' => 'text',
                'text' => 'これからよろしくお願いします！'
            );
+    } else if($postback === 'randamu') {
+        $response_format_text = array(
+            'type' => 'text',
+            'text' => '結果が出ました。'
+        );
+        $random = rand(1,100);
+        if ($random > 50){
+            $response_format_text2 = array(
+                'type' => 'text',
+                'text' => 'うどん'
+            );
+        } else {
+            $response_format_text2 = array(
+                'type' => 'text',
+                'text' => 'そば'
+            );
+        }
     }
 }
 

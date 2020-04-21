@@ -82,8 +82,8 @@ if($type == 'message') {
                 );
             }
         } else if ($text == 'ルーレット') {
-            $random = 0.8
-            if ($random > 0.5){
+            $random = rand(1,100);
+            if ($random > 50){
                 $response_format_text = array(
                     'type' => 'text',
                     'text' => 'あたり'

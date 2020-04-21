@@ -63,8 +63,8 @@ if($type == 'message') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '何が食べたいですか？'
-            ),
-            array(
+            );
+            $response_format_text2 = array(
                 'type' => 'text',
                 'text' => '何が食べたい？'
             );
@@ -356,7 +356,7 @@ if($type == 'message') {
 
 $post_data = array(
 	"replyToken" => $replyToken,
-	"messages" => array($response_format_text)
+	"messages" => array($response_format_text,$response_format_text2)
 );
 
 $ch = curl_init("https://api.line.me/v2/bot/message/reply");

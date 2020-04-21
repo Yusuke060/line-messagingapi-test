@@ -63,6 +63,10 @@ if($type == 'message') {
             $response_format_text = array(
                 'type' => 'text',
                 'text' => '何が食べたいですか？'
+            ),
+            array(
+                'type' => 'text',
+                'text' => '何が食べたい？'
             );
         } else if ($text == 'おはよう') {
             $response_format_text = array(

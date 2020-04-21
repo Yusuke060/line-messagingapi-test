@@ -133,12 +133,6 @@ if($type == 'message') {
         
         
         
-        
-        
-        
-        
-        
-        
         else if ($text == 'テキスト') {
             $response_format_text = array(
                 array(

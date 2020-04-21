@@ -81,6 +81,19 @@ if($type == 'message') {
                     'text' => '整数を入力してください。'
                 );
             }
+        } else if ($text == 'ルーレット') {
+            $random = 0.8
+            if ($random>0.5){
+                $response_format_text = array(
+                    'type' => 'text',
+                    'text' => 'あたり'
+                );
+            } else {
+                $response_format_text = array(
+                    'type' => 'text',
+                    'text' => 'はずれ'
+                );
+            }
         }
         
         

@@ -414,7 +414,9 @@ if($type == 'message') {
     } else if($postback === 'randamu') {
         
         $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu.csv', 'r');
-        $menu = fgetcsv($f);
+        while ($fcsv = fgetcsv($f) !== FALSE) {
+            $menu[] = $fcsv;
+        }
         fclose($f);
         
         $random = rand(1,100);
@@ -422,14 +424,14 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[2].'】'
+                    'text' => '【'.$menu[2][1].'】'
                 )
             );
         } else {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'$menu[0]'】'
+                    'text' => '【'.$menu[1][1].'】'
                 )
             );
         }

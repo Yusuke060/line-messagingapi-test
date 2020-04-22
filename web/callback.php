@@ -428,7 +428,7 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[2][0].'】'
+                    'text' => '【'.$menu.'】'
                 )
             );
         }

@@ -425,14 +425,14 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[2][1].'】'
+                    'text' => '【'.$menu[2].'】'
                 )
             );
         } else {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[1][1].'】'
+                    'text' => '【'.$menu[1].'】'
                 )
             );
         }

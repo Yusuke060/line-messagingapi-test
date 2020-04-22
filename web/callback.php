@@ -415,7 +415,7 @@ if($type == 'message') {
         
         $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu.csv', 'r');
         $menu = array();
-        while ($fcsv = fgetcsv($f) !== FALSE) {
+        while (($fcsv = fgetcsv($f)) !== false) {
             $menu[] = $fcsv;
         }
         fclose($f);
@@ -425,7 +425,7 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[2].'】'
+                    'text' => '【'.$menu.'】'
                 )
             );
         } else {

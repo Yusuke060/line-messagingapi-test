@@ -414,6 +414,7 @@ if($type == 'message') {
     } else if($postback === 'randamu') {
         
         $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu.csv', 'r');
+        $menu = array();
         while ($fcsv = fgetcsv($f) !== FALSE) {
             $menu[] = $fcsv;
         }
@@ -424,14 +425,14 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[2].'】'
+                    'text' => '【'.$menu[2][1].'】'
                 )
             );
         } else {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[1].'】'
+                    'text' => '【'.$menu[1][1].'】'
                 )
             );
         }

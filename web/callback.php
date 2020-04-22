@@ -412,19 +412,23 @@ if($type == 'message') {
             )
         );
     } else if($postback === 'randamu') {
+        
+        $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu.csv', 'r');
+        $menu = fgetcsv($f);
+        
         $random = rand(1,100);
         if ($random > 50){
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => 'うどん'
+                    'text' => '【'.$menu[1][0].'】'
                 )
             );
         } else {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => 'そば'
+                    'text' => '【'.$menu[2][0].'】'
                 )
             );
         }

@@ -415,20 +415,21 @@ if($type == 'message') {
         
         $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu.csv', 'r');
         $menu = fgetcsv($f);
+        fclose($f);
         
         $random = rand(1,100);
         if ($random > 50){
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[1].'】'
+                    'text' => '【'.$menu[2].'】'
                 )
             );
         } else {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$menu[0].'】'
+                    'text' => '【'$menu[0]'】'
                 )
             );
         }

@@ -419,7 +419,8 @@ if($type == 'message') {
         }
         fclose($f);
         
-        $random = rand(1,3);
+        $max = count($menu) - 1;
+        $random = rand(1,$max);
         $response_format_text = array(
             array(
                 'type' => 'text',

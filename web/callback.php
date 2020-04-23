@@ -425,12 +425,12 @@ if($type == 'message') {
             array(
                 'type' => 'text',
                 'text' => '【'.$menu[$random][1].'】'
-            ),
+            )/*,
             array(
                 'type'      => 'image',
                 'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/menu/' . $menu[$random][2] . '.jpg',
                 'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/menu/' . $menu[$random][2] . '.jpg'
-            )
+            )*/
         );
     }
 }

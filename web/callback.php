@@ -428,8 +428,8 @@ if($type == 'message') {
             ),
             array(
                 'type'      => 'image',
-                'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . 'menu/' . $menu[$random][2] ' ,
-                'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . 'menu/' . $menu[$random][2] '
+                'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . 'menu/' .$menu[$random][1] . '/',
+                'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . 'menu/' .$menu[$random][1] . '/'
             )
         );
     }

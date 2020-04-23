@@ -413,7 +413,7 @@ if($type == 'message') {
         );
     } else if($postback === 'randamu') {
         
-        $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu.csv', 'r');
+        $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu/menu.csv', 'r');
         while (($fcsv = fgetcsv($f)) !== false) {
             $menu[] = $fcsv;
         }
@@ -425,12 +425,12 @@ if($type == 'message') {
             array(
                 'type' => 'text',
                 'text' => '【'.$menu[$random][1].'】'
-            )/*,
+            ),
             array(
                 'type'      => 'image',
                 'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/menu/' . $menu[$random][2] . '.jpg',
                 'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/menu/' . $menu[$random][2] . '.jpg'
-            )*/
+            )
         );
     }
 }

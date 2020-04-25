@@ -429,8 +429,14 @@ if($type == 'message') {
         );
     } else if($postback === 'randamu') {
 
+        $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu/menu.csv', 'r');
+        while (($fcsv = fgetcsv($f)) !== false) {
+            $menu[] = $fcsv;
+        }
+        fclose($f);
+        
         $max = count($menu) - 1;
-        $random = 2;
+        $random = rand(1,$max);
         $response_format_text = array(
             array(
                 'type' => 'text',

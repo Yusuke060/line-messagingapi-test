@@ -178,10 +178,9 @@ if($type == 'message') {
                     'stickerId' => 1
                 ),
                 array(
-                    'type'  => 'uri',
-                    'uri' => 'https://line.me/R/shop/sticker/detail/703819',
-                    'label'  => 'ホームページ'
-                ),
+                    'type' => 'text',
+                    'text' => 'https://line.me/R/shop/sticker/detail/703819'
+                )
             );
         } else if ($text == '写真') {
             $response_format_text = array(

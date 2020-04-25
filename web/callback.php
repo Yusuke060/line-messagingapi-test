@@ -64,13 +64,6 @@ if($type == 'message') {
 
     if($msg_obj == "text"){
         if ($text == '昼ごはん') {
-            
-            $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu/menu.csv', 'r');
-            while (($fcsv = fgetcsv($f)) !== false) {
-                $menu[] = $fcsv;
-            }
-            fclose($f);
-            
             $response_format_text = array(
                 array(
                     'type' => 'text',
@@ -102,6 +95,24 @@ if($type == 'message') {
                 array(
                     'type' => 'text',
                     'text' => '【'.$text.'】とは何ですか？'
+                )
+            );
+        } else if ($text == '記録') {
+            $response_format_text = array(
+                array(
+                    'type'     => 'template',
+                    'altText'  => '記録',
+                    'template' => array(
+                        'type'    => 'buttons',
+                        'text'    => '下のボタンを押し, 数字を入力してください。',
+                        'actions' => array(
+                            array(
+                                'type'  => 'postback',
+                                'label' => '記録',
+                                'data'  => 'kiroku'
+                            )
+                        )
+                    )
                 )
             );
         } else if (is_numeric($text)) {
@@ -137,6 +148,22 @@ if($type == 'message') {
                     )
                 );
             }
+        } else if ($text == '首都') {
+            
+            $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/shuto/shuto.csv', 'r');
+            while (($fcsv = fgetcsv($f)) !== false) {
+                $shuto[] = $fcsv;
+            }
+            fclose($f);
+            
+            $max = count($shuto) - 1;
+            $random = rand(1,$max);
+            $response_format_text = array(
+                array(
+                    'type' => 'text',
+                    'text' => '【'.$shuto[$max][0].'】の首都は'.$shuto[$max][0].'です。'
+                )
+            )
         }
         
         
@@ -449,10 +476,17 @@ if($type == 'message') {
             )
         );
     } else if($postback === 'erabu') {
+        
+        $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu/menu.csv', 'r');
+        while (($fcsv = fgetcsv($f)) !== false) {
+            $menu[] = $fcsv;
+        }
+        fclose($f);
+        
         $response_format_text = array(
             array(
                 'type' => 'text',
-                'text' => 'これからよろしくお願いします！'
+                'text' => 'この機能はまだ使えません。'
             )
         );
     }

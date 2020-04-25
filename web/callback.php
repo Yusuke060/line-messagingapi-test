@@ -164,6 +164,17 @@ if($type == 'message') {
                     'text' => '【'.$shuto[$random][0].'】の首都は'.$shuto[$random][1].'です。'
                 )
             );
+        } else if ($text == '天気') {
+            
+            $weather = json_decode(file_get_contents('https://api.openweathermap.org/data/2.5/forecast?id=1907306&units=metric&appid=87ad375ecb53eaf114f39defb035f7c9'), true);
+            $tenki = $weather->{"list"}[0]->{"weather"}->{"main"};
+        
+            $response_format_text = array(
+                array(
+                    'type' => 'text',
+                    'text' => '【'.$tenki.'】'
+                )
+            );
         }
         
         

@@ -101,7 +101,7 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$userId.'】とは何ですか？'
+                    'text' => '【'.$text.'】とは何ですか？'
                 )
             );
         } else if (is_numeric($text)) {
@@ -176,7 +176,12 @@ if($type == 'message') {
                     'type'      => 'sticker',
                     'packageId' => 1,
                     'stickerId' => 1
-                )
+                ),
+                array(
+                    'type'  => 'uri',
+                    'uri' => 'https://line.me/R/shop/sticker/detail/703819',
+                    'label'  => 'ホームページ'
+                ),
             );
         } else if ($text == '写真') {
             $response_format_text = array(

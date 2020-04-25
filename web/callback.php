@@ -161,7 +161,7 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$shuto[$max][0].'】の首都は'.$shuto[$max][0].'です。'
+                    'text' => '【'.$shuto[$random][0].'】の首都は'.$shuto[$random][1].'です。'
                 )
             );
         }

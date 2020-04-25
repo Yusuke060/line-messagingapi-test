@@ -176,10 +176,6 @@ if($type == 'message') {
                     'type'      => 'sticker',
                     'packageId' => 1,
                     'stickerId' => 1
-                ),
-                array(
-                    'type' => 'text',
-                    'text' => 'https://line.me/R/shop/sticker/detail/703819'
                 )
             );
         } else if ($text == '写真') {

@@ -175,6 +175,13 @@ if($type == 'message') {
                     'text' => '【'.$tenki.'】'
                 )
             );
+        } else if ($text[0] == '@' or '＠') {
+            $response_format_text = array(
+                array(
+                    'type' => 'text',
+                    'text' => '入力モード'
+                )
+            );
         }
         
         

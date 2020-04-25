@@ -163,7 +163,7 @@ if($type == 'message') {
                     'type' => 'text',
                     'text' => '【'.$shuto[$max][0].'】の首都は'.$shuto[$max][0].'です。'
                 )
-            )
+            );
         }
         
         

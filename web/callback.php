@@ -175,7 +175,7 @@ if($type == 'message') {
                     'text' => '【'.$tenki.'】'
                 )
             );
-        } else if ($text[0] == '@' or '＠') {
+        } else if ($text[0] == '@') {
             $response_format_text = array(
                 array(
                     'type' => 'text',

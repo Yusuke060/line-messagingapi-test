@@ -101,7 +101,7 @@ if($type == 'message') {
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '【'.$text.'】とは何ですか？'
+                    'text' => '【'.$userId.'】とは何ですか？'
                 )
             );
         } else if (is_numeric($text)) {
@@ -363,7 +363,7 @@ if($type == 'message') {
                     'template' => array(
                         'type'    => 'buttons',
                         'title'   => '使い方' ,
-                        'text'    => .$userId,
+                        'text'    => '以下のボタンを押してみてください',
                         'actions' => array(
                             array(
                                 'type'  => 'message',

@@ -430,7 +430,7 @@ if($type == 'message') {
     } else if($postback === 'randamu') {
 
         $max = count($menu) - 1;
-        $random = rand(1,$max);
+        $random = 2;
         $response_format_text = array(
             array(
                 'type' => 'text',

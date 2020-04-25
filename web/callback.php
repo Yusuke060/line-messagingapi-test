@@ -17,7 +17,7 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 $type = $jsonObj->{"events"}[0]->{"type"};
         
 //userId
-$userId = $jsonObj->{"events"}[0]->{"sourcs"}->{"userId"};
+$userId = $jsonObj->{"events"}[0]->{"source"}->{"userId"};
 
 
 if($type == 'join') {

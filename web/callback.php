@@ -15,7 +15,9 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 // postback（ポストバックオプションに返事されると送信）
 // join (グループに参加)
 $type = $jsonObj->{"events"}[0]->{"type"};
-    
+        
+//userId
+$userId = $jsonObj->{"events"}[0]->{"sourcs"}->{"userId"};
 
 
 if($type == 'join') {
@@ -62,6 +64,13 @@ if($type == 'message') {
 
     if($msg_obj == "text"){
         if ($text == '昼ごはん') {
+            
+            $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu/menu.csv', 'r');
+            while (($fcsv = fgetcsv($f)) !== false) {
+                $menu[] = $fcsv;
+            }
+            fclose($f);
+            
             $response_format_text = array(
                 array(
                     'type' => 'text',
@@ -129,6 +138,13 @@ if($type == 'message') {
                 );
             }
         }
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -347,7 +363,7 @@ if($type == 'message') {
                     'template' => array(
                         'type'    => 'buttons',
                         'title'   => '使い方' ,
-                        'text'    => '以下のボタンを押してみてください',
+                        'text'    => .$userId,
                         'actions' => array(
                             array(
                                 'type'  => 'message',
@@ -412,13 +428,7 @@ if($type == 'message') {
             )
         );
     } else if($postback === 'randamu') {
-        
-        $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/menu/menu.csv', 'r');
-        while (($fcsv = fgetcsv($f)) !== false) {
-            $menu[] = $fcsv;
-        }
-        fclose($f);
-        
+
         $max = count($menu) - 1;
         $random = rand(1,$max);
         $response_format_text = array(
@@ -430,6 +440,13 @@ if($type == 'message') {
                 'type'      => 'image',
                 'originalContentUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/menu/' . $menu[$random][2] . '.jpg',
                 'previewImageUrl' => 'https://' . $_SERVER['SERVER_NAME'] . '/menu/' . $menu[$random][2] . '.jpg'
+            )
+        );
+    } else if($postback === 'erabu') {
+        $response_format_text = array(
+            array(
+                'type' => 'text',
+                'text' => 'これからよろしくお願いします！'
             )
         );
     }

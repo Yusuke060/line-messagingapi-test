@@ -161,7 +161,7 @@ if($type == 'message') {
         } else if ($text[0] == '@') {
             $inputnumber = ltrim($text, '@');
             
-            if (is_numeric($returntext)) {
+            if (is_numeric($inputnumber)) {
                 
                 $file = ('https://' . $_SERVER['SERVER_NAME'] . '/record.txt');
                 $currentnumber = file_get_contents($file);

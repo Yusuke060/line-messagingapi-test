@@ -159,13 +159,29 @@ if($type == 'message') {
                 )
             );
         } else if ($text[0] == '@') {
-            $returntext = ltrim($text, '@');
-            $response_format_text = array(
-                array(
-                    'type' => 'text',
-                    'text' => $returntext
-                )
-            );
+            $inputnumber = ltrim($text, '@');
+            
+            if (is_numeric($returntext)) {
+                
+                $file = ('https://' . $_SERVER['SERVER_NAME'] . '/record.txt');
+                $currentnumber = file_get_contents($file);
+                $newnumber = $currentnumber + $imputnumber;
+                file_put_contents($file, $newnumber);
+                
+                $response_format_text = array(
+                    array(
+                        'type' => 'text',
+                        'text' => $currentnumber. 'に'.$inputnumber.'を加えて'.$newnumber.'になりました'
+                    )
+                );
+            } else{
+                $response_format_text = array(
+                    array(
+                        'type' => 'text',
+                        'text' => '整数を入力してください。'
+                    )
+                );
+            }
         }
         
         

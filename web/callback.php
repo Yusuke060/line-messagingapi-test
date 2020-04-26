@@ -173,6 +173,10 @@ if($type == 'message') {
                     array(
                         'type' => 'text',
                         'text' => $currentnumber. 'に'.$inputnumber.'を加えて'.$newnumber.'になりました'
+                    ),
+                    array(
+                        'type' => 'text',
+                        'text' => $currentmoji
                     )
                 );
             } else{

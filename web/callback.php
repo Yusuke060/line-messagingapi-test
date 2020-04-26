@@ -165,7 +165,7 @@ if($type == 'message') {
                 
                 $file = ('https://' . $_SERVER['SERVER_NAME'] . '/record.txt');
                 $currentmoji = file_get_contents($file);
-                $currentnumber = trim($currentmoji, '"');
+                $currentnumber = trim($currentmoji, '\"');
                 $newnumber = $currentnumber + $imputnumber;
                 file_put_contents($file, $newnumber);
                 

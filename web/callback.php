@@ -131,23 +131,6 @@ if($type == 'message') {
                     )
                 );
             }
-        } else if ($text == 'ルーレット') {
-            $random = rand(1,100);
-            if ($random > 50){
-                $response_format_text = array(
-                    array(
-                        'type' => 'text',
-                        'text' => 'あたり'
-                    )
-                );
-            } else {
-                $response_format_text = array(
-                    array(
-                        'type' => 'text',
-                        'text' => 'はずれ'
-                    )
-                );
-            }
         } else if ($text == '首都') {
             
             $f = fopen('https://' . $_SERVER['SERVER_NAME'] . '/shuto/shuto.csv', 'r');
@@ -167,7 +150,7 @@ if($type == 'message') {
         } else if ($text == '天気') {
             
             $weather = json_decode(file_get_contents('https://api.openweathermap.org/data/2.5/forecast?id=1907306&units=metric&cnt=1&appid=87ad375ecb53eaf114f39defb035f7c9'));
-            $tenki = $weather->{"list"}[0]->{"weather"}[0]->{"main"};
+            $tenki = $weather->{"list"}[0]->{"weather"}[0]->{"description"};
         
             $response_format_text = array(
                 array(
@@ -176,10 +159,11 @@ if($type == 'message') {
                 )
             );
         } else if ($text[0] == '@') {
+            $returntext = ltrim($text, '@');
             $response_format_text = array(
                 array(
                     'type' => 'text',
-                    'text' => '入力モード'
+                    'text' => $returntext
                 )
             );
         }

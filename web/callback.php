@@ -62,9 +62,13 @@ if($type == 'message') {
     }
 
     if($msg_obj == "text"){
-        
-        $data = fopen('https://' . $_SERVER['SERVER_NAME'] . '/database.csv', 'a+');
-        fputcsv($data, array($text, $userId));
+       
+        $data = fopen('https://' . $_SERVER['SERVER_NAME'] . '/database.csv', 'w+');
+        while (($dscv= fgetcsv($data)) !== false) {
+            $database[] = $dcsv;
+        }
+        $database[] = [$text, $userId];
+        fputcsv($data, $database);
         fclose($data);
         
         if ($text == '昼ごはん') {

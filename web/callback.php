@@ -63,6 +63,17 @@ if($type == 'message') {
     }
 
     if($msg_obj == "text"){
+        
+        $data = fopen('https://' . $_SERVER['SERVER_NAME'] . '/database.csv', 'w+');
+        while (($dscv= fgetcsv($data)) !== false) {
+            $database[] = $dcsv;
+        }
+        $database[] = [$text, $userId];
+        foreach($database as $line){
+            fputcsv($data, $line);
+        }
+        fclose($data);
+        
         if ($text == '昼ごはん') {
             $response_format_text = array(
                 array(

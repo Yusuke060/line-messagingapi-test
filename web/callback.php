@@ -1,7 +1,6 @@
 <?php
 $accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
 
-
 //ユーザーからのメッセージ取得
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
@@ -63,6 +62,11 @@ if($type == 'message') {
     }
 
     if($msg_obj == "text"){
+        
+        $data = fopen('https://' . $_SERVER['SERVER_NAME'] . '/database.csv', 'w');
+        fputcsv($data, array($text, $userId));
+        fclose($data);
+        
         if ($text == '昼ごはん') {
             $response_format_text = array(
                 array(

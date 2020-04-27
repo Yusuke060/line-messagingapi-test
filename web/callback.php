@@ -68,7 +68,9 @@ if($type == 'message') {
             $database[] = $dcsv;
         }
         $database[] = [$text, $userId];
-        fputcsv($data, $database);
+        foreach($database as $line){
+            fputcsv($data, $line);
+        }
         fclose($data);
         
         if ($text == '昼ごはん') {

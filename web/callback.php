@@ -64,7 +64,7 @@ if($type == 'message') {
 
     if($msg_obj == "text"){
         
-        $data = fopen('https://' . $_SERVER['SERVER_NAME'] . '/database.csv', 'w+');
+        $data = fopen('https://' . $_SERVER['SERVER_NAME'] . '/database.csv', 'w');
         while (($dcsv= fgetcsv($data)) !== false) {
             $database[] = $dcsv;
         }
